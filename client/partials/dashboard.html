@@ -1,0 +1,48 @@
+<div ng-controller="sessionController">
+    <div class="header">
+        <h1>Hello {{currentUser.name}}!</h1>
+    </div>
+    <a href="#!/add">Add Hero</a>
+    <a href="/logout">Logout</a>
+
+    <div  class='mainContent' ng-controller="heroController">
+        <h2>Active Heroes</h2>
+         <table>
+        <tr>
+            <th>Name</th>
+            <th>Power</th>
+            <th>Total Likes</th>
+            <th>Like!</th>
+            <th>Active?</th>
+            <th>Change Status</th>
+        </tr>
+        <tr ng-repeat = "hero in heroes[0]">
+            <td>{{hero._user.name}}</td>
+            <td>{{hero.power}}</td>
+            <td>{{hero.likes}}</td>
+            <td><button ng-click="likeHero(hero)">Like!</button></td>
+            <td>{{hero.status}}</td>
+            <td><button ng-click="changeStat(hero)">Change!</button></td>
+        </tr>
+    </table>
+
+    <h2>Inactive Heroes</h2>
+         <table>
+        <tr>
+            <th>Name</th>
+            <th>Power</th>
+            <th>Status</th>
+            <th>Change Status</th>
+        </tr>
+        <tr ng-repeat = "hero in heroes[1]">
+            <td>{{hero._user.name}}</td>
+            <td>{{hero.power}}</td>
+            <td>{{hero.status}}</td>
+            <td><button ng-click="changeStat(hero)">Change!</button></td>
+        </tr>
+    </table>
+        
+    </div>
+</div>
+
+

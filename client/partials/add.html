@@ -1,0 +1,20 @@
+<div ng-controller='sessionController'>
+        <div class='header'>
+            <h1>{{currentUser.name}}, Add a Hero!</h1>
+        </div>
+    <div ng-controller='heroController'>
+        <div class="error" ng-repeat='error in errors track by $index'>
+            <p>{{error}}</p>
+        </div>
+        <a href="#!/dashboard">Home</a>
+        <a href="/logout">Logout</a>
+        <div class='mainContent'>
+            <h2>Enter Info Below:</h2>
+            <form ng-submit='addHero(currentUser._id)'>
+                Name: <input type="text" ng-model='newHero.name'><br>
+                Power: <input type='text' ng-model='newHero.power'><br>
+                <input type='submit' value='Add!'>
+            </form>
+        </div>
+    </div>
+</div>
